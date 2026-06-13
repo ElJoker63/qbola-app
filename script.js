@@ -1,40 +1,84 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Reveal animation on scroll
-    const revealElements = document.querySelectorAll('.feature-card, .hero-content, .hero-mockup, .media-content');
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navAnchors = [...document.querySelectorAll(".nav-links a")];
+    const sections = [...document.querySelectorAll("main section[id], .site-header[id]")];
 
-    const reveal = () => {
-        revealElements.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const elementTop = el.getBoundingClientRect().top;
-            const elementVisible = 150;
-
-            if (elementTop < windowHeight - elementVisible) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
         });
-    };
 
-    // Initial styles for animation
-    revealElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s ease-out';
+        navAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", (event) => {
+            const target = document.querySelector(anchor.getAttribute("href"));
+            if (!target) return;
+
+            event.preventDefault();
+            const headerOffset = 76;
+            const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+            window.scrollTo({ top, behavior: "smooth" });
+        });
     });
 
-    window.addEventListener('scroll', reveal);
-    reveal(); // Initial check
+    const revealTargets = document.querySelectorAll(".feature-card, .media-visual, .media-copy, .desktop-copy, .laptop-preview, .privacy-copy, .privacy-list article, .download-section");
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        revealTargets.forEach((target) => target.classList.add("reveal"));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14 });
+
+        revealTargets.forEach((target) => observer.observe(target));
+    }
+
+    if ("IntersectionObserver" in window && sections.length) {
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                const id = entry.target.getAttribute("id");
+                navAnchors.forEach((anchor) => {
+                    anchor.classList.toggle("active", anchor.getAttribute("href") === `#${id}`);
                 });
+            });
+        }, {
+            rootMargin: "-35% 0px -55% 0px",
+            threshold: 0.01
+        });
+
+        sections.forEach((section) => navObserver.observe(section));
+    }
+
+    const platformText = {
+        windows: "Cliente para Windows en preparación.",
+        macos: "Cliente para macOS en preparación.",
+        linux: "Cliente para Linux en preparación."
+    };
+    const platformStatus = document.querySelector(".platform-status");
+
+    document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+            document.querySelectorAll(".tab").forEach((item) => item.classList.remove("active"));
+            tab.classList.add("active");
+
+            if (platformStatus) {
+                platformStatus.textContent = platformText[tab.dataset.platform] || platformText.windows;
             }
         });
     });

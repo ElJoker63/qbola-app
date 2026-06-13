@@ -3,118 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qbolá Chat | Mensajería de Próxima Generación sobre DNS</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Qbolá es una app de mensajería moderna para Android, con conversaciones privadas, grupos, multimedia y cliente desktop en camino.">
+    <title>Qbolá | Mensajería privada para Android y desktop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">Q</div>
-                <span>Qbolá Chat</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#features">Características</a></li>
-                <li><a href="#privacy">Privacidad</a></li>
-                <li><a href="#multimedia">Multimedia</a></li>
-                <li><a href="https://github.com/eljoker/chat/releases" class="btn-download-sm">Descargar</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header class="site-header" id="inicio">
+        <nav class="nav" aria-label="Navegación principal">
+            <a class="brand" href="#inicio" aria-label="Qbolá inicio">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 48 48">
+                        <path d="M24 4C12.9 4 4 11.8 4 21.4c0 6.4 4 12 10 15l-1.8 7.1 8.1-4.8c1.2.2 2.5.3 3.8.3 11 0 20-7.8 20-17.5S35 4 24 4Z" fill="currentColor"/>
+                        <path d="m24 11 3.2 7 7.6.8-5.6 5.2 1.5 7.5-6.7-3.8-6.7 3.8 1.5-7.5-5.6-5.2 7.6-.8L24 11Z" fill="#fff"/>
+                    </svg>
+                </span>
+                <span class="brand-word">Qbolá</span>
+            </a>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">Nueva Versión 0.0.7</span>
-                <h1>Mensajería sin límites, impulsada por <span class="gradient-text">DNS</span>.</h1>
-                <p>Comunícate de forma segura, privada y ultrarrápida. Qbolá Chat utiliza protocolos DNS híbridos para mantenerte conectado donde otros fallan.</p>
-                <div class="hero-btns">
-                    <a href="https://github.com/eljoker/chat/releases/latest" class="btn-primary">
-                        <i class="fab fa-android"></i> Descargar APK
-                    </a>
-                    <a href="#features" class="btn-secondary">Más información</a>
-                </div>
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#funciones">Funciones</a>
+                <a href="#desktop">Desktop</a>
+                <a href="#descargar">Descargar</a>
             </div>
-            <div class="hero-mockup">
-                <div class="phone-frame">
-                    <img src="image.png" alt="Qbola Chat Preview">
-                </div>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Diseñado para la <span class="highlight">libertad</span></h2>
-                <p>Tecnología de vanguardia aplicada a la mensajería diaria.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Protocolo DNS UDP</h3>
-                    <p>Comunicación resiliente que funciona sobre consultas DNS, ideal para entornos con restricciones de red.</p>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <h1>Conecta, comparte, conversa a tu manera</h1>
+                <p>Qbolá es la app de mensajería pensada para tus conversaciones del día a día. Rápida, confiable y hecha para mantenerte cerca de lo que importa.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://github.com/eljoker/chat/releases/latest">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar APK
+                    </a>
+                    <a class="btn btn-ghost" href="#desktop">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H4zM9 20h6m-4-4v4m2-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Cliente desktop
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                    <h3>E2E Encryption</h3>
-                    <p>Tus mensajes están protegidos de extremo a extremo con algoritmos RSA y AES. Solo tú y tu receptor pueden leerlos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Super Poll 🚀</h3>
-                    <p>Unificación de peticiones para un consumo de batería mínimo y una velocidad de respuesta instantánea.</p>
+                <div class="release-line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.7 3 8.4 7 10 4-1.6 7-5.3 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Ligera, segura y en constante evolución.</span>
+                    <small>Versión 0.0.7</small>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="multimedia" class="media-section">
-        <div class="container">
-            <div class="media-content">
-                <h2>Experiencia Multimedia <span class="highlight">Enriquecida</span></h2>
-                <p>Envía y visualiza fotos, videos y audios directamente en el chat usando nuestra tecnología de punteros multimedia.</p>
-                <ul class="media-list">
-                    <li><i class="fas fa-check-circle"></i> Reproductor de video nativo a pantalla completa.</li>
-                    <li><i class="fas fa-check-circle"></i> Notas de voz con barra de progreso real.</li>
-                    <li><i class="fas fa-check-circle"></i> Visualizador de imágenes inmersivo.</li>
-                    <li><i class="fas fa-check-circle"></i> Markdown avanzado estilo Telegram.</li>
-                </ul>
-            </div>
-            <div class="media-visual">
-                <div class="audio-bubble-mockup">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="wave">||||||||||||||||||||</div>
-                    <span>0:45</span>
+            <div class="hero-stage" aria-label="Vista previa de Qbolá en móvil y desktop">
+                <div class="phone-preview">
+                    <img src="image.png" alt="Vista de chats de Qbolá en Android">
+                </div>
+
+                <div class="desktop-preview">
+                    <div class="window-bar">
+                        <div class="window-brand"><span></span>Qbolá</div>
+                        <div class="window-controls"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="app-window">
+                        <aside class="app-sidebar">
+                            <div class="search-row">Buscar <kbd>Ctrl+K</kbd></div>
+                            <div class="side-link active">Chats <b>4</b></div>
+                            <div class="side-link">Contactos</div>
+                            <div class="side-link">Grupos</div>
+                            <div class="side-link">Ajustes</div>
+                            <p>Conversaciones</p>
+                            <div class="mini-chat active"><img src="assets/qbola-havana-bg.webp" alt=""><span><strong>ElJoker63</strong><small>😆</small></span><em>10:54</em></div>
+                            <div class="mini-chat"><span class="avatar">F</span><span><strong>Familia</strong><small>Mamá: Ya salimos</small></span><em>9:32</em></div>
+                            <div class="mini-chat"><span class="avatar">A</span><span><strong>Amigos del barrio</strong><small>Luis: Imagen</small></span><em>Ayer</em></div>
+                        </aside>
+                        <section class="app-chat">
+                            <header>
+                                <img src="assets/qbola-havana-bg.webp" alt="">
+                                <span><strong>Amigos del barrio</strong><small>12 miembros</small></span>
+                                <div class="chat-actions"><i></i><i></i><i></i></div>
+                            </header>
+                            <div class="chat-body">
+                                <div class="message incoming">
+                                    <b>Luis</b>
+                                    Miren esta foto del atardecer
+                                    <img src="assets/qbola-havana-bg.webp" alt="Foto compartida del atardecer">
+                                    <small>❤️ 🧡 6</small>
+                                </div>
+                                <div class="message outgoing">Está brutal 🔥 <small>18:46 ✓✓</small></div>
+                                <div class="message incoming compact"><b>Ana</b>Vamos a repetir esta semana <small>18:47</small></div>
+                                <div class="message outgoing audio"><button aria-label="Reproducir audio"></button><span></span><span></span><span></span><small>18:48 ✓✓</small></div>
+                            </div>
+                            <footer>
+                                <span>Escribe un mensaje...</span>
+                                <button aria-label="Enviar">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 16-8-5 16-3-6-8-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                                </button>
+                            </footer>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="download" class="cta">
-        <div class="container">
-            <div class="cta-box">
-                <h2>¿Listo para unirte a la red?</h2>
-                <p>Descarga la última versión y experimenta el futuro de la mensajería segura y privada.</p>
-                <a href="https://github.com/eljoker/chat/releases/latest" class="btn-primary-lg">Obtener Qbolá Chat v0.0.7</a>
+        <section class="features" id="funciones">
+            <h2>Todo lo que necesitas para conversar sin límites</h2>
+            <div class="feature-grid">
+                <article>
+                    <span class="icon blue"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" fill="currentColor"/></svg></span>
+                    <h3>Conversaciones privadas</h3>
+                    <p>Chats 1 a 1 rápidos y confiables. Tus mensajes siempre contigo.</p>
+                </article>
+                <article>
+                    <span class="icon red"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-8 0M3 21a7 7 0 0 1 14 0M20 8v6m3-3h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                    <h3>Grupos sin complicaciones</h3>
+                    <p>Crea grupos, agrega miembros y mantén a todos en la misma conversación.</p>
+                </article>
+                <article>
+                    <span class="icon green"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 14l3-3 3 3 2-2 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <h3>Multimedia sin límites</h3>
+                    <p>Envía fotos, videos, audios, documentos y más. Todo en alta calidad.</p>
+                </article>
+                <article>
+                    <span class="icon violet"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12v10H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+                    <h3>Privacidad y control</h3>
+                    <p>Administra tu perfil, bloquea contactos y controla quién puede hablar contigo.</p>
+                </article>
+                <article>
+                    <span class="icon amber"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                    <h3>Notificaciones inteligentes</h3>
+                    <p>Personaliza alertas y mantente al tanto de lo importante.</p>
+                </article>
+                <article>
+                    <span class="icon teal"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <h3>Siempre en mejora</h3>
+                    <p>Actualizaciones constantes con nuevas funciones y mejoras de rendimiento.</p>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 AEware Dev. Todos los derechos reservados.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
+        <section class="desktop" id="desktop">
+            <div class="desktop-card">
+                <div class="desktop-mini-window">
+                    <div class="window-bar"><div class="window-brand"><span></span>Qbolá</div><div class="window-controls"><i></i><i></i><i></i></div></div>
+                    <div class="video-shell">
+                        <aside></aside>
+                        <div class="video-scene">
+                            <div class="portrait primary"></div>
+                            <div class="portrait secondary"></div>
+                            <div class="call-buttons"><span></span><span></span><span></span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="desktop-copy">
+                <h2>Tu experiencia, ahora en grande</h2>
+                <p>El cliente desktop de Qbolá extiende tus conversaciones a tu computadora. Más espacio, más comodidad, misma velocidad.</p>
+                <div class="desktop-points">
+                    <span><svg viewBox="0 0 24 24"><path d="M4 5h16v11H4zM9 20h6m-4-4v4m2-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Interfaz limpia y moderna</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M17 1v6h-6M7 23v-6h6M20 11a8 8 0 0 0-14-5M4 13a8 8 0 0 0 14 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sincronización en tiempo real</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>Llamadas de voz y video</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M12 18v-6m-3 3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Arrastra y suelta tus archivos</span>
+                </div>
+                <small>Próximamente disponible para Windows, macOS y Linux.</small>
+            </div>
+        </section>
+
+        <section class="download" id="descargar">
+            <div>
+                <h2>Comienza a conectar hoy</h2>
+                <p>Descarga Qbolá y descubre una forma diferente de conversar.</p>
+            </div>
+            <a class="btn btn-primary" href="https://github.com/eljoker/chat/releases/latest">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Descargar APK
+            </a>
+            <a class="btn btn-ghost" href="#desktop">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H4zM9 20h6m-4-4v4m2-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Cliente desktop<small>Próximamente</small></span>
+            </a>
+            <div class="download-proof"><b>Ligera y segura</b></div>
+            <div class="download-proof"><b>Hecha para nuestra gente</b></div>
+            <div class="download-proof"><b>Conectados como siempre</b></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="brand" href="#inicio" aria-label="Qbolá inicio">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                    <path d="M24 4C12.9 4 4 11.8 4 21.4c0 6.4 4 12 10 15l-1.8 7.1 8.1-4.8c1.2.2 2.5.3 3.8.3 11 0 20-7.8 20-17.5S35 4 24 4Z" fill="currentColor"/>
+                    <path d="m24 11 3.2 7 7.6.8-5.6 5.2 1.5 7.5-6.7-3.8-6.7 3.8 1.5-7.5-5.6-5.2 7.6-.8L24 11Z" fill="#fff"/>
+                </svg>
+            </span>
+            <span class="brand-word">Qbolá</span>
+        </a>
+        <nav aria-label="Enlaces secundarios">
+            <a href="#funciones">Privacidad</a>
+            <a href="#desktop">Términos</a>
+            <a href="#funciones">Ayuda</a>
+            <a href="#descargar">Soporte</a>
+        </nav>
+        <p>© 2026 Qbolá. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
