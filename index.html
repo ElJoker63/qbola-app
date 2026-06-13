@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -15,13 +16,7 @@
     <header class="site-header" id="inicio">
         <nav class="nav" aria-label="Navegación principal">
             <a class="brand" href="#inicio" aria-label="Qbolá inicio">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 48 48">
-                        <path d="M24 4C12.9 4 4 11.8 4 21.4c0 6.4 4 12 10 15l-1.8 7.1 8.1-4.8c1.2.2 2.5.3 3.8.3 11 0 20-7.8 20-17.5S35 4 24 4Z" fill="currentColor"/>
-                        <path d="m24 11 3.2 7 7.6.8-5.6 5.2 1.5 7.5-6.7-3.8-6.7 3.8 1.5-7.5-5.6-5.2 7.6-.8L24 11Z" fill="#fff"/>
-                    </svg>
-                </span>
-                <span class="brand-word">Qbolá</span>
+                <img class="brand-logo" src="logo.svg" alt="Qbolá">
             </a>
 
             <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
@@ -51,7 +46,7 @@
                     </a>
                     <a class="btn btn-ghost" href="https://github.com/ElJoker63/qbola-app/releases/latest" data-download="windows">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H4zM9 20h6m-4-4v4m2-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Cliente desktop
+                        <span>Cliente desktop<small data-windows-status>Buscando release</small></span>
                     </a>
                 </div>
                 <div class="release-line">
@@ -68,7 +63,7 @@
 
                 <div class="desktop-preview">
                     <div class="window-bar">
-                        <div class="window-brand"><span></span>Qbolá</div>
+                        <div class="window-brand"><span aria-hidden="true"></span><img class="window-logo" src="logo.svg" alt="Qbolá"></div>
                         <div class="window-controls"><i></i><i></i><i></i></div>
                     </div>
                     <div class="app-window">
@@ -151,7 +146,7 @@
         <section class="desktop" id="desktop">
             <div class="desktop-card">
                 <div class="desktop-mini-window">
-                    <div class="window-bar"><div class="window-brand"><span></span>Qbolá</div><div class="window-controls"><i></i><i></i><i></i></div></div>
+                    <div class="window-bar"><div class="window-brand"><span aria-hidden="true"></span><img class="window-logo" src="logo.svg" alt="Qbolá"></div><div class="window-controls"><i></i><i></i><i></i></div></div>
                     <div class="video-shell">
                         <aside></aside>
                         <div class="video-scene">
@@ -196,13 +191,7 @@
 
     <footer class="footer">
         <a class="brand" href="#inicio" aria-label="Qbolá inicio">
-            <span class="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 48 48">
-                    <path d="M24 4C12.9 4 4 11.8 4 21.4c0 6.4 4 12 10 15l-1.8 7.1 8.1-4.8c1.2.2 2.5.3 3.8.3 11 0 20-7.8 20-17.5S35 4 24 4Z" fill="currentColor"/>
-                    <path d="m24 11 3.2 7 7.6.8-5.6 5.2 1.5 7.5-6.7-3.8-6.7 3.8 1.5-7.5-5.6-5.2 7.6-.8L24 11Z" fill="#fff"/>
-                </svg>
-            </span>
-            <span class="brand-word">Qbolá</span>
+            <img class="brand-logo" src="logo.svg" alt="Qbolá">
         </a>
         <nav aria-label="Enlaces secundarios">
             <a href="#funciones">Privacidad</a>

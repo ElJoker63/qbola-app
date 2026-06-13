@@ -76,34 +76,10 @@ main,
     font-weight: 800;
 }
 
-.brand-mark {
-    width: 34px;
-    height: 34px;
-    color: var(--red);
-}
-
-.brand-mark svg {
-    width: 100%;
-    height: 100%;
-}
-
-.brand-word {
-    position: relative;
-    color: var(--blue);
-    font-size: 25px;
-    line-height: 1;
-}
-
-.brand-word::after {
-    content: "";
-    position: absolute;
-    right: -12px;
-    top: -4px;
-    width: 7px;
-    height: 18px;
-    border-radius: 8px 8px 2px 2px;
-    background: var(--red);
-    transform: rotate(39deg);
+.brand-logo {
+    width: 118px;
+    height: auto;
+    display: block;
 }
 
 .nav-links {
@@ -337,9 +313,21 @@ main,
 .window-brand span {
     width: 7px;
     height: 7px;
+    flex: 0 0 auto;
+    margin-right: 18px;
     border-radius: 50%;
     background: var(--red);
     box-shadow: 9px 0 0 var(--amber), 18px 0 0 var(--green);
+}
+
+.window-logo {
+    width: 56px;
+    height: auto;
+    display: block;
+}
+
+.desktop-mini-window .window-logo {
+    width: 48px;
 }
 
 .window-controls {
@@ -894,8 +882,8 @@ kbd {
     font-size: 12px;
 }
 
-.footer .brand-word {
-    font-size: 23px;
+.footer .brand-logo {
+    width: 104px;
 }
 
 .footer nav {
