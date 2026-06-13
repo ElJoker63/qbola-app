@@ -206,6 +206,15 @@ main,
     border-color: var(--line-strong);
 }
 
+.btn.is-unavailable {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #c6cfdd;
+}
+
+.btn.is-unavailable small {
+    color: var(--amber);
+}
+
 .btn-primary {
     border-color: rgba(255, 255, 255, 0.08);
     background: var(--blue);
