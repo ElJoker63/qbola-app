@@ -1013,14 +1013,14 @@ kbd {
     }
 
     .hero-stage {
-        min-height: 350px;
+        min-height: 194px;
     }
 
     .phone-preview {
         left: 50%;
         top: 10px;
-        width: 128px;
-        height: 262px;
+        width: 94px;
+        height: 192px;
         transform: translateX(-50%);
     }
 
@@ -1029,7 +1029,7 @@ kbd {
     }
 
     .features h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .feature-grid {
